@@ -1,13 +1,20 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+/*подключение основных стилей*/
+
+.page {
+    min-width: 320px;
+    font-family: "Inter", "sans-serif", "Arial";
+    background-color: #202020;
+    margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+/*
+.section-line {
+    height: 1px;
+    color: #DADADA;
+    background-color: #DADADA;
+    max-width: 1140px;
+}*/
