@@ -5,16 +5,8 @@
 
 .page {
     min-width: 320px;
+    height: 100vh;
     font-family: "Inter", "sans-serif", "Arial";
     background-color: #202020;
     margin: 0 auto;
 }
-
-
-/*
-.section-line {
-    height: 1px;
-    color: #DADADA;
-    background-color: #DADADA;
-    max-width: 1140px;
-}*/

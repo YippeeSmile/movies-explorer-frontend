@@ -44,6 +44,12 @@
     color: #FFFFFF;
 }
 
+.portfolio__link {
+    margin: 0;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 @media screen and (max-width: 782px) {
     .portfolio {
         margin: 90px 50px;
