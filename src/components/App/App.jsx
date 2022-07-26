@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import Footer from '../Footer/Footer';
+import Profile from '../Profile/Profile';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
 import NotFound from '../NotFound/NotFound';
@@ -19,11 +19,10 @@ function App() {
         <Switch>
             <Route exact path='/'>
                 <Main />
-                <Footer />
             </Route>
 
             <Route path="/profile">
-                <Main />
+                <Profile />
             </Route>
 
             <Route path="/movies">
