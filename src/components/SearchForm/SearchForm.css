@@ -25,7 +25,7 @@
     width: 100%;
     min-height: 72px;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     background-color: #222222;
     border: none;
     color: #FFF;
@@ -53,6 +53,12 @@
     margin-right: 19px;
     margin-left: -89px;
     transition: opacity ease-in-out .3s;
+}
+
+.search-form__icon-button {
+    color: #FFFFFF;
+    width: 34px;
+    height: 34px;
 }
 
 .search-form__button:hover {
