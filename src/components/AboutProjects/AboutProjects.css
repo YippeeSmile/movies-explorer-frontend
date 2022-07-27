@@ -1,5 +1,6 @@
 .about-projects {
-    margin: 110px 70px;
+    margin: 110px auto;
+    max-width: calc(100vw - 2 * 70px);
     background-color: #202020;
 }
 
@@ -27,7 +28,7 @@
 
 .about-projects__subtitle {
     margin: 0;
-    margin-bottom: 16px;
+    margin-bottom: 26px;
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -0.04em;
@@ -46,7 +47,7 @@
 
 .about-projects__timeline {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 25% 75%;
     text-align: center;
     font-family: 'Inter';
     font-style: normal;
@@ -75,9 +76,28 @@
     height: 36px;
 }
 
+@media screen and (max-width: 768px) {
+    .about-projects {
+        margin: 90px auto;
+        max-width: calc(100vw - 2 * 50px);
+    }
+    .about-projects__subtitle {
+        margin-bottom: 22px;
+    }
+    .about-projects__text {
+        font-size: 12px;
+        line-height: 18px;
+        padding-right: 0px;
+    }
+    .about-projects__content {
+        margin-bottom: 93px;
+    }
+}
+
 @media screen and (max-width: 555px) {
     .about-projects {
-        margin: 70px 18px;
+        margin: 70px auto;
+        max-width: calc(100vw - 2 * 18px);
     }
     .about-projects__title {
         padding-bottom: 28px;

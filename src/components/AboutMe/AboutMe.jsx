@@ -1,5 +1,6 @@
 import './AboutMe.css';
 import React from 'react';
+import myphoto from '../../images/about-me_photo.png';
 
 const AboutMe = () => {
 
@@ -17,7 +18,7 @@ const AboutMe = () => {
                         <p className='about-me__info_social-text'>Github</p>
                     </div>
                 </div>
-            <div className='about-me__image'></div>
+            <img src={myphoto} className='about-me__image' />
         </div>
         </section>
     )
