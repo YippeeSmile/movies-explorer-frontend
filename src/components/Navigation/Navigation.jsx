@@ -1,11 +1,20 @@
 import './Navigation.css';
-import React from 'react';
+import React, { useState} from 'react';
 import { Link, Route, NavLink } from 'react-router-dom';
 import account from '../../images/icon__account.svg';
 import burger from '../../images/burger__icon.svg';
 import exit from '../../images/exit.svg';
 
 const Navigation = () => {
+   const [open, setOpen] = useState(false);
+    
+    const openBurger = () => {
+        setOpen(true);
+      };
+
+      const closeBurger = () => {
+        setOpen(false);
+      };
 
     return (
         <nav className='navigation'>
@@ -18,6 +27,7 @@ const Navigation = () => {
                         <button className="navigation__main-container_button">Войти</button>
                     </Link>
                 </nav>
+                <img className='navigation__burger_icon' src={burger} alt="раскрывающиеся меню" onClick={() => openBurger} />
             </Route>
 
             <Route path='/(profile|movies|saved-movies)'>
@@ -37,25 +47,24 @@ const Navigation = () => {
                         </Link>
                     </div>
                 </nav>
-                <div className='navigation__burger'>
-                    <img className='navigation__burger_icon' src={burger} alt="раскрывающиеся меню" />
-                    <img className='navigation__exit-button' src={exit} alt="крестик"></img>
-                <nav className="navigation__mobile-container">
-              <div className="navigation__items">
-                <Link to='/' className="navigation__item">Главная</Link>
-                <NavLink to='/movies' className="navigation__item" activeClassName="navigation__item_active">Фильмы</NavLink> 
-                <NavLink to='/saved-movies' className="navigation__item" activeClassName="navigation__item_active">Сохраненные фильмы</NavLink>
+                <div className={`${open} ? 'navigation__burger' : '' `}>
+                    <div className='navigation__burger-container'>
+                    <button type="button" className='navigation__exit-button' onClick={() => closeBurger} />
+                <div className="navigation__burger-items">
+                <Link to='/' className="navigation__burger-item">Главная</Link>
+                <NavLink to='/movies' className="navigation__burger-item" activeClassName="navigation__item_active">Фильмы</NavLink> 
+                <NavLink to='/saved-movies' className="navigation__burger-item" activeClassName="navigation__item_active">Сохраненные фильмы</NavLink>
               </div>
-              <div className="navigation__account-container"> 
-                <Link to='/profile' className="navigation__account">Аккаунт</Link>
-                <Link to='/profile' className="navigation__account-icon">
+              <div className="navigation__burger-account-container"> 
+                <Link to='/profile' className="navigation__burger-account">Аккаунт</Link>
+                <Link to='/profile' className="navigation__burger-account-icon">
                     <img src={account} alt="иконка аккаунт" />
                 </Link>
               </div>  
-            </nav>
+            </div>
           </div>
 
-            </Route>
+            </Route>  
         </nav>
     )
 }

@@ -2,6 +2,7 @@ import './SavedMovies.css';
 import React from 'react';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
+import Footer from '../Footer/Footer';
 
 
 function SavedMovies() {
@@ -9,6 +10,7 @@ function SavedMovies() {
       <section className="saved-movies">
         <SearchForm />
         <MoviesCardList />
+        <Footer />
       </section>
     )
   }
