@@ -96,6 +96,7 @@
 @media screen and (max-width: 555px) {
     .techs {
         max-width: calc(100vw - 36px);
+        background-color: #202020;
     }
     .techs__content {
         margin: 60px auto 50px;
@@ -103,6 +104,7 @@
     .techs__title {
         margin: 0 18px;
         padding: 70px 0 28px;
+        border-bottom: 1px solid #000;
     }
     .techs__buttons_list {
         max-width: calc(100vw - 140px);
