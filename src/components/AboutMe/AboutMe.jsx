@@ -18,7 +18,7 @@ const AboutMe = () => {
                         <p className='about-me__info_social-text'>Github</p>
                     </div>
                 </div>
-            <img src={myphoto} className='about-me__image' />
+            <img src={myphoto} className='about-me__image' alt="фото" />
         </div>
         </section>
     )
