@@ -8,6 +8,18 @@
     padding-bottom: 112px;
 }
 
+.auth__logo {
+    width: 38px;
+    height: 38px;
+    padding-top: 18px;
+    cursor: pointer;
+    transition: opacity ease-in-out .3s;
+}
+
+.auth__logo:hover {
+    opacity: 0.3;
+}
+
 .auth__title {
     margin: 40px 0 0;
     font-style: normal;
@@ -15,7 +27,6 @@
     font-size: 24px;
     line-height: 29px;
     color: #FFF;
-    line-height: 29px;
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 40px;
@@ -130,4 +141,21 @@
 
 .auth__bottom-link:hover {
     opacity: 0.3;
+}
+
+@media screen and (max-width: 550px) {
+    .auth {
+        max-width: calc(100vw - 60px);
+        align-items: center;
+        padding-bottom: 30px;
+    }
+    .auth__signin {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .auth__button {
+        margin-top: 267px;
+        font-size: 12px;
+        line-height: 14.5px;
+    }
 }

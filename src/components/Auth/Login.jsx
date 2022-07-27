@@ -7,7 +7,7 @@ const Login = () => {
 
     return (
         <section className="auth">
-            <Link to='/'><img className='header__logo' src={logo} alt="лого" /></Link>
+            <Link to='/'><img className='auth__logo' src={logo} alt="лого" /></Link>
             <h1 className="auth__title">Рады видеть!</h1>
             <form className="auth__form" name="auth-form">
                 <fieldset className="auth__fieldset">
