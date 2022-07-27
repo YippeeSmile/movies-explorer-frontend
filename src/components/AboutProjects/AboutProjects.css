@@ -7,7 +7,7 @@
 .about-projects__title {
     text-align: left;
     color: #FFF;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
@@ -18,7 +18,7 @@
 }
 
 .about-projects__content {
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     color: #FFF;
@@ -49,7 +49,7 @@
     display: grid;
     grid-template-columns: 25% 75%;
     text-align: center;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 14px;

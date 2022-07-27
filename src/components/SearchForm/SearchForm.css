@@ -36,7 +36,7 @@
     background-position-y: center;
     background-position-x: 19px;
     padding-left: 63px;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -51,6 +51,7 @@
     width: 80px;
     height: 34px;
     margin-right: 19px;
+    margin-left: -89px;
     transition: opacity ease-in-out .3s;
 }
 

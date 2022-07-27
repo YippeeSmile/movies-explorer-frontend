@@ -9,7 +9,7 @@
 
 .profile__title {
     margin: 74px auto 123px;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -22,7 +22,7 @@
     margin: 203px auto 70px;
     text-align: center;
     color: #FFFFFF;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;

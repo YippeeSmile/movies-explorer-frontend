@@ -48,7 +48,7 @@
 }
 
 .auth__label {
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -61,7 +61,7 @@
     border: none;
     border-bottom: 1px solid #424242;
     background-color: #202020;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -78,7 +78,7 @@
 .auth__input:active {
     border: none;
     background-color: #202020;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -104,7 +104,7 @@
     width: 100%;
     background-color: #4285F4;
     margin-top: 179px;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -122,7 +122,7 @@
 }
 
 .auth__signin {
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

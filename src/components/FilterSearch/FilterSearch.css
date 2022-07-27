@@ -59,7 +59,7 @@ input:checked+.filter-search__slider:before {
 .filter-search__item {
     margin: 0;
     margin-left: 14px;
-    font-family: 'Inter';
+    font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;

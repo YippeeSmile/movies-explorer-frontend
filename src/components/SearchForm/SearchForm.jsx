@@ -10,8 +10,8 @@ const SearchForm = () => {
             <form className='search-form__container'>
                 <input type='text' className='search-form__input' placeholder='Фильм' minLength="2" required ></input>
                 <button type='submit' className='search-form__button'><img src={zoom} alt='лупа' /></button>
+                <FilterSearch />
             </form>
-            <FilterSearch />
         </section>
     )
 }
