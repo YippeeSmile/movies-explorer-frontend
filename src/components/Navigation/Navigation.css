@@ -118,19 +118,24 @@
         opacity: 0.3;
     }
     
-    .navigation__exit-button {
-        height: 22px;
-        width: 22px;
+    .navigation__burger-btn {
         border: none;
+        background-color: #202020;
+    }
+    
+    .navigation__exit-button {
+        border: none;
+        background-color: #272727;
         position: absolute;
         top: 10px;
         right: 20px;
         z-index: 2;
-        background-image: transparent url('../../images/exit.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background: #ffffff;
         cursor: pointer;
+    }
+    
+    .navigation__exit-button-icon {
+        height: 22px;
+        width: 22px;
     }
     
     .navigation__burger-items {
@@ -158,6 +163,7 @@
     .navigation__burger-item:hover {
         text-decoration: underline;
         text-decoration-color: #FFF;
+        text-underline-offset: 7px;
         opacity: 0.3;
         cursor: pointer;
     }

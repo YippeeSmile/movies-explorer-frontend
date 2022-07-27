@@ -27,7 +27,8 @@ const Navigation = () => {
                         <button className="navigation__main-container_button">Войти</button>
                     </Link>
                 </nav>
-                <img className='navigation__burger_icon' src={burger} alt="раскрывающиеся меню" onClick={() => openBurger} />
+                <button className='navigation__burger-btn' onClick={openBurger}>
+                <img className='navigation__burger_icon' src={burger} alt="бургер меню" /></button>
             </Route>
 
             <Route path='/(profile|movies|saved-movies)'>
@@ -49,7 +50,8 @@ const Navigation = () => {
                 </nav>
                 <div className={`${open} ? 'navigation__burger' : '' `}>
                     <div className='navigation__burger-container'>
-                    <button type="button" className='navigation__exit-button' onClick={() => closeBurger} />
+                    <button type="button" className='navigation__exit-button' onClick={closeBurger}>
+                        <img src={exit} alt="кнопка крестик" className='navigation__exit-button-icon'/></button>
                 <div className="navigation__burger-items">
                 <Link to='/' className="navigation__burger-item">Главная</Link>
                 <NavLink to='/movies' className="navigation__burger-item" activeClassName="navigation__item_active">Фильмы</NavLink> 
