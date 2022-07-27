@@ -5,7 +5,6 @@
     .navigation__container {
         display: flex;
         align-items: center;
-        display: visible;
     }
     
     .navigation__main-container_button {
@@ -146,9 +145,6 @@
     @media screen and (max-width: 550px) {
         .navigation__burger_icon {
             display: block;
-        }
-        .navigation__container {
-            display: none;
         }
     }
     /*burger active menu

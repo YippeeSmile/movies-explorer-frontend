@@ -37,7 +37,6 @@ const Navigation = () => {
                         </Link>
                     </div>
                 </nav>
-
                 <div className='navigation__burger'>
                     <img className='navigation__burger_icon' src={burger} alt="раскрывающиеся меню" />
                     <img className='navigation__exit-button' src={exit} alt="крестик"></img>
