@@ -33,6 +33,7 @@
     background-color: #222222;
     border: none;
     color: #FFF;
+    padding-left: 20px;
 }
 
 .search-form__input::placeholder {
@@ -87,6 +88,11 @@
     }
     .search-form__container_left-column {
         width: 100%;
+    }
+    .search-form__input::placeholder {
+        background: transparent;
+        background-position-x: 12px;
+        padding-left: 0px;
     }
     .search-form {
         padding-bottom: 0px;
