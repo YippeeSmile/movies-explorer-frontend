@@ -13,7 +13,6 @@
 
 .movie-card__title {
     margin: 0;
-    font-size: 15px;
     color: #FFFFFF;
     font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
@@ -61,4 +60,16 @@
 
 .movie-card__button_saved-ok {
     background: #EE3465;
+}
+
+@media screen and (max-width: 550px) {
+    .movie-card__info {
+        padding: 14px;
+    }
+    .movie-card__title {
+        font-size: 12px;
+    }
+    .movie-card__duration {
+        font-size: 10px;
+    }
 }
