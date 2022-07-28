@@ -71,5 +71,8 @@ input:checked+.filter-search__slider:before {
 }
 
 @media screen and (max-width: 550px) {
-    .filter-search {}
+    .filter-search {
+        border-left: none;
+        padding: 45px 0;
+    }
 }

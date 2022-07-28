@@ -83,6 +83,10 @@
     }
     .search-form__container {
         display: flex;
+        flex-direction: column;
+    }
+    .search-form__container_left-column {
+        width: 100%;
     }
     .search-form {
         padding-bottom: 0px;
