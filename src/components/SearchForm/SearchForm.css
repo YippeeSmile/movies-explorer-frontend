@@ -19,6 +19,13 @@
     border-radius: 9px;
 }
 
+.search-form__container_left-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
 .search-form__input {
     width: 100%;
     min-height: 72px;
