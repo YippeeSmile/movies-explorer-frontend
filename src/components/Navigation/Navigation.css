@@ -50,6 +50,10 @@
         display: none;
     }
     
+    .navigation__burger_active {
+        display: block;
+    }
+    
     .navigation__burger-container {
         display: none;
         flex-direction: column;
@@ -63,6 +67,10 @@
         background-color: #272727;
         z-index: 1;
         max-height: 100vh;
+    }
+    
+    .navigation__burger-container_active {
+        display: flex;
     }
     
     .navigation__items {
@@ -204,12 +212,12 @@
         .navigation__container {
             display: none;
         }
-        .navigation__burger {
+        /*.navigation__burger {
             display: block;
         }
         .navigation__burger-container {
             display: flex;
-        }
+        }*/
     }
     /*burger active menu
 @media screen and (max-width: 769px) {

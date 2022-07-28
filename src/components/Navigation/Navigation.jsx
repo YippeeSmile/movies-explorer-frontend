@@ -5,15 +5,15 @@ import account from '../../images/icon__account.svg';
 import burger from '../../images/burger__icon.svg';
 import exit from '../../images/exit.svg';
 
-const Navigation = () => {
-   const [open, setOpen] = useState(false);
+function Navigation() {
+   const [isBurger, setISBurger] = useState(false);
     
     const openBurger = () => {
-        setOpen(true);
+        setISBurger(true);
       };
 
       const closeBurger = () => {
-        setOpen(false);
+        setISBurger(false);
       };
 
     return (
@@ -48,7 +48,7 @@ const Navigation = () => {
                         </Link>
                     </div>
                 </nav>
-                <div className={`${open} ? 'navigation__burger' : '' `}>
+                <div className={`${isBurger} ? 'navigation__burger_active' : 'navigation__burger' `}>
                     <div className='navigation__burger-container'>
                     <button type="button" className='navigation__exit-button' onClick={closeBurger}>
                         <img src={exit} alt="кнопка крестик" className='navigation__exit-button-icon'/></button>

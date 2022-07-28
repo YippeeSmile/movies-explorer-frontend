@@ -71,7 +71,5 @@ input:checked+.filter-search__slider:before {
 }
 
 @media screen and (max-width: 550px) {
-    .filter-search {
-        margin-top: 45px;
-    }
+    .filter-search {}
 }
