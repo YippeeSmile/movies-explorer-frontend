@@ -12,25 +12,25 @@ const Techs = () => {
                 <p className='techs__content_text'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
             </div>
                 <ul className='techs__buttons_list'>
-                    <li><button className='techs__button'>
+                    <li><button type="button" className='techs__button'>
                         <span className='techs__button_text'>HTML</span>
                     </button></li>
-                    <li><button className='techs__button'>
+                    <li><button type="button" className='techs__button'>
                         <span className='techs__button_text'>CSS</span>
                     </button></li>
-                    <li><button className='techs__button'>
+                    <li><button type="button" className='techs__button'>
                         <span className='techs__button_text'>JS</span>
                     </button></li>
-                    <li><button className='techs__button'>
+                    <li><button type="button" className='techs__button'>
                         <span className='techs__button_text'>React</span>
                     </button></li>
-                    <li><button className='techs__button'>
+                    <li><button type="button" className='techs__button'>
                         <span className='techs__button_text'>Git</span>
                     </button></li>
-                    <li><button className='techs__button'>
+                    <li><button type="button" className='techs__button'>
                         <span className='techs__button_text'>Express.js</span>
                     </button></li>
-                    <li><button className='techs__button'>
+                    <li><button type="button" className='techs__button'>
                         <span className='techs__button_text'>mongoDB</span>
                     </button></li>
                 </ul>

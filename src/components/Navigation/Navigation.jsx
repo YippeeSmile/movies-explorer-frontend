@@ -7,18 +7,18 @@ import exit from '../../images/exit.svg';
 function Navigation() {
    const [isBurger, setISBurger] = useState(false);
     
-    const openBurger = () => {
+    function openBurger() {
         setISBurger(true);
       };
 
-      const closeBurger = () => {
+      function closeBurger() {
         setISBurger(false);
       };
 
     return (
         <nav className='navigation'>
             <Route exact path='/'>
-                <nav className='navigation__container'>
+                <nav className='navigation__container_main'>
                     <Link to='/signup' className='navigation__main-container_sign'>
                         <p>Регистрация</p>
                     </Link>
@@ -26,8 +26,6 @@ function Navigation() {
                         <button className="navigation__main-container_button">Войти</button>
                     </Link>
                 </nav>
-                <button type="button" className='navigation__burger-btn' onClick={() => openBurger}>
-                <img className='navigation__burger_icon' src={burger} alt="бургер меню" /></button>
             </Route>
 
             <Route path='/(profile|movies|saved-movies)'>
@@ -47,8 +45,8 @@ function Navigation() {
                         </Link>
                     </div>
                 </nav>
-                <div className={`navigation__burger ${isBurger ? 'navigation__burger_active' : ''} `}>
-                    <div className='navigation__burger-container'>
+                <div className={`navigation__burger ${isBurger ? "navigation__burger_active" : ""} `}>
+                    <div className={`navigation__burger-container ${isBurger ? "navigation__burger-container_active" : ""} `}>
                     <button type="button" className='navigation__exit-button' onClick={closeBurger}>
                         <img src={exit} alt="кнопка крестик" className='navigation__exit-button-icon'/></button>
                 <div className="navigation__burger-items">
