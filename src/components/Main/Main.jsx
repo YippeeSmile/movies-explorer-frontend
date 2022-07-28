@@ -10,14 +10,14 @@ const Main = () => {
 
 
     return ( 
-       <>
+       <div className="main">
        <Promo />
        <AboutProjects />
        <Techs />
        <AboutMe />
        <Portfolio />
        <Footer />
-       </>
+       </div>
     )
 };
 

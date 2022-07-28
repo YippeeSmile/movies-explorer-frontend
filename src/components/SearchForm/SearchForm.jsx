@@ -1,6 +1,6 @@
 import './SearchForm.css';
 import React from 'react';
-import zoom from '../../images/zoom-icon.svg';
+import zoom from '../../images/zoom-icon-btn.svg';
 import FilterSearch from '../FilterSearch/FilterSearch';
 
 const SearchForm = () => {

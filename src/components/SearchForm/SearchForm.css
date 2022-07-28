@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
+    width: 80%;
 }
 
 .search-form__input {
@@ -34,6 +34,7 @@
     border: none;
     color: #FFF;
     padding-left: 20px;
+    border-radius: 9px;
 }
 
 .search-form__input::placeholder {
