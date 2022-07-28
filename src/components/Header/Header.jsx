@@ -12,7 +12,7 @@ const Header = () => {
             <Route exact path="/">
                 <header className='header'>
                     <Link to='/' className='header__logo-link'>
-                        <img src={logo} alt='Логотип зеленый' className='header__logo' />
+                        <img src={logo} alt='Логотип' className='header__logo' />
                     </Link>
                 <Navigation />
                 </header>
@@ -20,7 +20,7 @@ const Header = () => {
             <Route exact path="/(profile|movies|saved-movies)">
             <header className='header'>
                     <Link to='/' className='header__logo-link'>
-                        <img src={logo} alt='Логотип зеленый' className='header__logo' />
+                        <img src={logo} alt='Логотип' className='header__logo' />
                     </Link>
                 <Navigation />
                 </header>
