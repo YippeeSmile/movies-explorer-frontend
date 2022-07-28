@@ -55,14 +55,26 @@
             max-width: calc(100% - 2 * 25px);
         }
         .movies-card-list__items {
-            grid-template-columns: repeat(2, 342px);
+            grid-template-columns: repeat(2, 330px);
             grid-template-rows: repeat(4, 1fr);
-            row-gap: 35px;
+            row-gap: 30px;
             column-gap: 24px;
         }
     }
     
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 719px) {
+        .movies-card-list {
+            max-width: calc(100% - 2 * 18px);
+        }
+        .movies-card-list__items {
+            grid-template-columns: repeat(2, 300px);
+            grid-template-rows: repeat(4, 1fr);
+            row-gap: 30px;
+            column-gap: 20px;
+        }
+    }
+    
+    @media screen and (max-width: 650px) {
         .movies-card-list {
             max-width: calc(100% - 2 * 20px);
         }
