@@ -86,8 +86,10 @@
     .search-form__container {
         display: flex;
         flex-direction: column;
+        background-color: #202020;
     }
     .search-form__container_left-column {
+        background-color: #222222;
         width: 100%;
     }
     .search-form__input::placeholder {
