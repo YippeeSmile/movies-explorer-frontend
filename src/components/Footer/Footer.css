@@ -1,0 +1,96 @@
+.footer {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 79px 70px 0px;
+}
+
+.footer__text {
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Inter", "sans-serif", "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #8B8B8B;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 20px;
+}
+
+.footer__copy-link_items {
+    margin: 30px auto 0;
+    padding: 0 0 10px 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Inter", "sans-serif", "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    padding-bottom: 20px;
+}
+
+.footer__copy-link_items-right {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__copy-link_copy {
+    margin-right: 20px;
+}
+
+.footer__copy-link_link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.footer__copy-link_link:hover {
+    opacity: 0.3;
+}
+
+.footer__copy-link_copy:last-of-type {
+    margin-right: 0px;
+}
+
+@media screen and (max-width: 550px) {
+    .footer {
+        padding: 0 10px;
+    }
+    .footer__text {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .footer__copy-link_items {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__copy-link_items-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__copy-link_copy {
+        margin-right: 0px;
+        padding-top: 12px;
+    }
+    .footer__copy-link_copy:first-child {
+        padding-top: 30px;
+    }
+    .footer__copy-link_copy:last-child {
+        padding-top: 30px;
+    }
+    .footer__copy-link_items-right .footer__copy-link_copy {
+        padding-top: 30px;
+    }
+}

@@ -1,0 +1,103 @@
+.search-form {
+    margin: 0 auto;
+    max-width: calc(100% - 140px);
+    border: none;
+    border-bottom: 1px solid #424242;
+    padding-top: 80px;
+    padding-bottom: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-form__container {
+    background-color: #222222;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 9px;
+}
+
+.search-form__container_left-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.search-form__input {
+    width: 100%;
+    min-height: 72px;
+    margin: 0;
+    background-color: #222222;
+    border: none;
+    color: #FFF;
+    padding-left: 20px;
+    border-radius: 9px;
+}
+
+.search-form__input::placeholder {
+    background: url(../../images/zoom-icon.svg) no-repeat;
+    background-position-y: center;
+    background-position-x: 19px;
+    padding-left: 63px;
+    font-family: "Inter", "sans-serif", "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #8B8B8B;
+}
+
+.search-form__button {
+    border: none;
+    background: #4285F4;
+    border-radius: 48px;
+    width: 80px;
+    height: 34px;
+    margin-right: 19px;
+    margin-left: -89px;
+    transition: opacity ease-in-out .3s;
+}
+
+.search-form__icon-button {
+    color: #FFFFFF;
+    width: 34px;
+    height: 34px;
+}
+
+.search-form__button:hover {
+    opacity: 0.3;
+}
+
+@media screen and (max-width: 768px) {
+    .search-form {
+        margin: 0 auto;
+        max-width: calc(100% - 30px);
+        padding-bottom: 120px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .search-form {
+        max-width: calc(100vw - 20px);
+    }
+    .search-form__container {
+        display: flex;
+        flex-direction: column;
+        background-color: #202020;
+    }
+    .search-form__container_left-column {
+        background-color: #222222;
+        width: 100%;
+    }
+    .search-form__input::placeholder {
+        background: transparent;
+        background-position-x: 12px;
+        padding-left: 0px;
+    }
+    .search-form {
+        padding-bottom: 0px;
+    }
+}

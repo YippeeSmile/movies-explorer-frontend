@@ -1,0 +1,31 @@
+.header {
+    max-width: calc(100vw - 2 * 70px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    width: 38px;
+    height: 38px;
+    padding-top: 18px;
+    cursor: pointer;
+    transition: opacity ease-in-out .3s;
+}
+
+.header__logo:hover {
+    opacity: 0.3;
+}
+
+@media screen and (max-width: 769px) {
+    .header {
+        max-width: calc(100vw - 2 * 30px);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header {
+        max-width: calc(100vw - 2 * 14px);
+    }
+}
