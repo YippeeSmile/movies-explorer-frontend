@@ -184,7 +184,6 @@ function App() {
       localStorage.setItem('moviesStorage', JSON.stringify(moviesStorage))
       localStorage.setItem('request', request)
       localStorage.setItem('checkboxStatus', checkboxStatus)
-
       setFilteredMovies(moviesStorage)
       setIsSearch(true)
     }
