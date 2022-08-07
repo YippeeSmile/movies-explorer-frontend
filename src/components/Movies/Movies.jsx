@@ -39,11 +39,11 @@ const Movies = ({
               moreButtonVisibility={moreButtonVisibility}
             />: (!preloader ?
                 <div className="movies__span">
-                  <span className="movies__span-item">Ничего не найдено</span>
+                  <span className="movies__error-span-text">Ничего не найдено</span>
                 </div>
                 :
                 <div className="movies__span"> 
-                  <span className="movies__span-item">{searchStatus}</span>
+                  <span className="movies__error-span-text">{searchStatus}</span>
                 </div>
               )
             : ("")

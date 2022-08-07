@@ -1,4 +1,4 @@
-function FilterMovies(movies, request, checkboxStatus) {
+function filterMovies(movies, request, checkboxStatus) {
     let filterMovies = movies;
 
     if (checkboxStatus) {
@@ -11,4 +11,4 @@ function FilterMovies(movies, request, checkboxStatus) {
     return result;
 }
 
-export default FilterMovies;
+export default filterMovies;

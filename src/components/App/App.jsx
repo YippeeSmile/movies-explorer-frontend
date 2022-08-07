@@ -19,7 +19,7 @@ import SavedMovies from '../SavedMovies/SavedMovies'
 import InfoToolTip from '../InfoTooltip/InfoTooltip'
 import { CurrentUserContext } from '../../context/CurrentUserContext'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
-import FilterMovies from '../../hooks/FilterMovies'
+import filterMovies from '../../hooks/FilterMovies'
 import Footer from '../Footer/Footer'
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('moviesStorage')) {
       const initialSearch = JSON.parse(localStorage.getItem('moviesStorage'))
-      const searchResult = FilterMovies(initialSearch, request, checkboxStatus)
+      const searchResult = filterMovies(initialSearch, request, checkboxStatus)
       setFilteredMovies(searchResult)
       setIsSearchDone(true)
     }
@@ -174,7 +174,7 @@ function App() {
 
   useEffect(() => {
     if (moviesCollection.length > 0) {
-      const moviesStorage = FilterMovies(
+      const moviesStorage = filterMovies(
         moviesCollection,
         request,
         checkboxStatus,

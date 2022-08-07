@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
 import Preloader from '../Preloader/Preloader';
-import moviesFilter from '../../utils/MoviesFilter'
+import filterMovies from '../../hooks/FilterMovies'
 
 function SavedMovies({savedMovies, onDeleteMovie}) {
   const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
@@ -15,7 +15,7 @@ function SavedMovies({savedMovies, onDeleteMovie}) {
   function handleSearchSavedMovie(request, checkboxStatus) {
     launchPreloader();
     
-    const searchResult = moviesFilter(savedMovies, request, checkboxStatus);
+    const searchResult = filterMovies(savedMovies, request, checkboxStatus);
     setFilteredSavedMovies(searchResult);
     setRequest(request);
     setCheckboxStatus(checkboxStatus);
@@ -29,7 +29,7 @@ function SavedMovies({savedMovies, onDeleteMovie}) {
 
   useEffect(() => {
     if (filteredSavedMovies.length > 0) {
-      const searchResult = moviesFilter(savedMovies, request, checkboxStatus);
+      const searchResult = filterMovies(savedMovies, request, checkboxStatus);
       setFilteredSavedMovies(searchResult);
     }
   }, [savedMovies]);
@@ -47,9 +47,7 @@ function SavedMovies({savedMovies, onDeleteMovie}) {
               movies={filteredSavedMovies}
               savedMovies={savedMovies}
               onDeleteMovie={onDeleteMovie} /> : (
-                <div className="saved-movies__span">
-                <span className="saved-movies__span-item">Ничего не найдено</span>
-              </div>
+                <span className="saved-movies__error">Ничего не найдено</span>
             )
           : (
             <MoviesCardList 
