@@ -21,6 +21,8 @@ import { CurrentUserContext } from '../../context/CurrentUserContext'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import filterMovies from '../../hooks/FilterMovies'
 import Footer from '../Footer/Footer'
+import useCurrentWidth from '../../hooks/useCurrentWidth'
+//import { getInitialMoviesCount, getLoadStep } from '../../utils/getMoviesCount'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -38,16 +40,15 @@ function App() {
   const [preloader, setPreloader] = useState(false)
   const [searchStatus, setSearchStatus] = useState('')
   const [isSearch, setIsSearch] = useState(false)
-  const [firstResults, setFirstResults] = useState(0)
+  const [firstMovieCount, setFirstMovieCount] = useState(0)
   const [moreResults, setMoreResults] = useState(0)
   const [moreButtonVisibility, setMoreButtonVisibility] = useState(false)
 
   const [savedMovies, setSavedMovies] = useState([])
-
+  const width = useCurrentWidth();
   const history = useHistory()
   const pathname = useLocation()
-
-  const currentViewport = document.documentElement.clientWidth
+  
 
   useEffect(() => {
     checkToken()
@@ -92,7 +93,7 @@ function App() {
   }
 
   function updateProfileInfo({ name, email }) {
-    const token = localStorage.getItem('jwt') //jwt
+    const token = localStorage.getItem('jwt')
     mainApi
       .editProfile({ token, name, email })
       .then((newUser) => {
@@ -220,28 +221,28 @@ function App() {
   }
 
   useEffect(() => {
-    if (currentViewport <= 480) {
-      setFirstResults(5)
+    if (width <= 480) {
+      setFirstMovieCount(5)
       setMoreResults(2)
-    } else if (currentViewport <= 1024) {
-      setFirstResults(8)
+    } else if (width <= 768) {
+      setFirstMovieCount(8)
       setMoreResults(2)
-    } else if (currentViewport > 1024) {
-      setFirstResults(12)
+    } else if (width > 1024) {
+      setFirstMovieCount(12)
       setMoreResults(3)
     }
-  }, [currentViewport])
+  }, [width])
 
   useEffect(() => {
     if (filteredMovies.length > 0) {
-      if (filteredMovies.length > firstResults) {
-        setRenderedMovies(filteredMovies.slice(0, firstResults))
+      if (filteredMovies.length > firstMovieCount) {
+        setRenderedMovies(filteredMovies.slice(0, firstMovieCount))
         setMoreButtonVisibility(true)
       } else {
         setRenderedMovies(filteredMovies)
       }
     }
-  }, [filteredMovies, firstResults])
+  }, [filteredMovies, firstMovieCount])
 
   function handleUserSignOut() {
     localStorage.removeItem('jwt')
@@ -295,7 +296,7 @@ function App() {
               onSaveMovie={saveMovie}
               onDeleteMovie={handleDeleteMovie}
               moreButtonVisibility={moreButtonVisibility}
-              onRenderMovies={renderMovies}
+              renderMoreMovies={renderMovies}
             />
           </ProtectedRoute>
 

@@ -9,7 +9,7 @@ const MoviesCardList = ({
   onDeleteMovie,
   preloader,
   isSearchDone,
-  onRenderMovies,
+  renderMoreMovies,
   moreButtonVisibility,
 }) => {
   const moreButtonClassName = moreButtonVisibility
@@ -33,9 +33,7 @@ const MoviesCardList = ({
         isSearchDone ? (
           <div className="movies-list__btn-section">
             <button
-              onClick={() => {
-                onRenderMovies()
-              }}
+              onClick={renderMoreMovies} //onRenderMovies
               className={moreButtonClassName}
               type="button"
             >
