@@ -22,8 +22,6 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import FilterMovies from '../../hooks/FilterMovies'
 import Footer from '../Footer/Footer'
 
-
-
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({})
