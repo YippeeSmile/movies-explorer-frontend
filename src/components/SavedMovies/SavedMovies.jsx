@@ -6,10 +6,10 @@ import Preloader from '../Preloader/Preloader';
 import filterMovies from '../../hooks/FilterMovies'
 
 function SavedMovies({savedMovies, onDeleteMovie}) {
+  const [preloader, setPreloader] = useState(false);
   const [filteredSavedMovies, setFilteredSavedMovies] = useState([]);
   const [request, setRequest] = useState('');
   const [checkboxStatus, setCheckboxStatus] = useState(false);
-  const [preloader, setPreloader] = useState(false);
   const [isSearchDone, setIsSearchDone] = useState(false);
 
   function handleSearchSavedMovie(request, checkboxStatus) {

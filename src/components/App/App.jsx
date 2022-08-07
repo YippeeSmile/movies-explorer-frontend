@@ -37,7 +37,7 @@ function App() {
   const [checkboxStatus, setCheckboxStatus] = useState(false)
   const [preloader, setPreloader] = useState(false)
   const [searchStatus, setSearchStatus] = useState('')
-  const [isSearchDone, setIsSearchDone] = useState(false)
+  const [isSearch, setIsSearch] = useState(false)
   const [firstResults, setFirstResults] = useState(0)
   const [moreResults, setMoreResults] = useState(0)
   const [moreButtonVisibility, setMoreButtonVisibility] = useState(false)
@@ -58,7 +58,7 @@ function App() {
       const initialSearch = JSON.parse(localStorage.getItem('moviesStorage'))
       const searchResult = filterMovies(initialSearch, request, checkboxStatus)
       setFilteredMovies(searchResult)
-      setIsSearchDone(true)
+      setIsSearch(true)
     }
   }, [currentUser])
 
@@ -137,10 +137,10 @@ function App() {
 
   function launchPreloader() {
     setPreloader(true)
-    setTimeout(() => setPreloader(false), 700)
+    setTimeout(() => setPreloader(false), 1000)
   }
 
-  function handleSearchMovie(request, checkboxStatus) {
+  function searchMovie(request, checkboxStatus) {
     launchPreloader()
     setRenderedMovies([])
     setRequest(request)
@@ -185,7 +185,7 @@ function App() {
       localStorage.setItem('checkboxStatus', checkboxStatus)
 
       setFilteredMovies(moviesStorage)
-      setIsSearchDone(true)
+      setIsSearch(true)
     }
   }, [moviesCollection, request, checkboxStatus])
 
@@ -201,7 +201,7 @@ function App() {
     }
   }, [renderedMovies, filteredMovies])
 
-  function handleSaveMovie(movie) {
+  function saveMovie(movie) {
     mainApi
       .saveMovie(movie)
       .then((newMovie) => {
@@ -286,13 +286,13 @@ function App() {
           <ProtectedRoute path="/movies" loggedIn={loggedIn}>
             <Movies
               loggedIn={loggedIn}
-              onSearch={handleSearchMovie}
+              onSearch={searchMovie}
               preloader={preloader}
-              isSearchDone={isSearchDone}
+              isSearchDone={isSearch}
               searchStatus={searchStatus}
               renderedMovies={renderedMovies}
               savedMovies={savedMovies}
-              onSaveMovie={handleSaveMovie}
+              onSaveMovie={saveMovie}
               onDeleteMovie={handleDeleteMovie}
               moreButtonVisibility={moreButtonVisibility}
               onRenderMovies={renderMovies}
