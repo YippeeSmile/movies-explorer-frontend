@@ -44,7 +44,7 @@ class MainApi {
                 .then(this._getResponse)
         }
         /*
-            ///yнужен ли он
+        
             tokenCheck = (token) => {
                     return fetch(`${this._baseUrl}/users/me`, {
                             method: 'GET',
