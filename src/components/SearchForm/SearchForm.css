@@ -61,6 +61,13 @@
     transition: opacity ease-in-out .3s;
 }
 
+.search-form__button:disabled {
+    color: #424242;
+    cursor: default;
+    opacity: 1;
+    transition: none;
+}
+
 .search-form__icon-button {
     color: #FFFFFF;
     width: 34px;

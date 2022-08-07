@@ -70,6 +70,12 @@
     width: 100%;
 }
 
+.auth__input-error {
+    padding-top: 5px;
+    margin-bottom: 5px;
+    color: #EE3465;
+}
+
 .auth__input:focus {
     outline: none;
     border-bottom: 1px solid #4285F4;
@@ -141,6 +147,17 @@
 
 .auth__bottom-link:hover {
     opacity: 0.3;
+}
+
+.auth__input-error {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #EE3465;
+    padding-top: 5px;
+    opacity: 1;
 }
 
 @media screen and (max-width: 550px) {

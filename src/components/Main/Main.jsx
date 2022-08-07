@@ -4,10 +4,8 @@ import AboutProjects from '../AboutProjects/AboutProjects';
 import Techs from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
 import Portfolio from '../Portfolio/Portfolio';
-import Footer from '../Footer/Footer';
 
 const Main = () => {
-
 
     return ( 
        <div className="main">
@@ -16,7 +14,6 @@ const Main = () => {
        <Techs />
        <AboutMe />
        <Portfolio />
-       <Footer />
        </div>
     )
 };
