@@ -14,7 +14,7 @@ const Header = ({loggedIn}) => {
                     <Link to='/' className='header__logo-link'>
                         <img src={logo} alt='Логотип' className='header__logo' />
                     </Link>
-                <Navigation loggedIn={loggedIn} />
+                <Navigation loggedIn={loggedIn}/>
                 </header>
             </Route>
             <Route exact path="/(profile|movies|saved-movies)">

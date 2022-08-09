@@ -272,7 +272,7 @@ function App() {
         <Header loggedIn={loggedIn} />
         <Switch>
           <Route exact path="/">
-            <Main />
+            <Main loggedIn={loggedIn}/>
           </Route>
 
           <ProtectedRoute path="/profile" loggedIn={loggedIn}>
