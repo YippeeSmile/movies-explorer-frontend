@@ -32,6 +32,8 @@ function App() {
   )
   const [isErrorInfoTooltipOpen, setIsErrorInfoTooltipOpen] = useState(false)
   const [profileMessage, setProfileMessage] = useState('')
+  const [registerError, setRegisterError] = useState('')
+  const [loginError, setLoginError] = useState('')
   const [moviesCollection, setMoviesCollection] = useState([])
   const [renderedMovies, setRenderedMovies] = useState([])
   const [filteredMovies, setFilteredMovies] = useState([])
@@ -42,7 +44,7 @@ function App() {
   const [isSearch, setIsSearch] = useState(false)
   const [firstMovieCount, setFirstMovieCount] = useState(0)
   const [moreResults, setMoreResults] = useState(0)
-  const [moreButtonVisibility, setMoreButtonVisibility] = useState(false)
+  const [getMoreMoviesButton, setGetMoreMoviesButton] = useState(false)
 
   const [savedMovies, setSavedMovies] = useState([])
   const width = useCurrentWidth();
@@ -58,26 +60,28 @@ function App() {
     if (localStorage.getItem('moviesStorage')) {
       const initialSearch = JSON.parse(localStorage.getItem('moviesStorage'))
       const searchResult = filterMovies(initialSearch, request, checkboxStatus)
+      console.log('initialSearch', initialSearch)
+      console.log('searchResult', searchResult)
       setFilteredMovies(searchResult)
       setIsSearch(true)
     }
-  }, [currentUser])
+  }, [currentUser, loggedIn])
 
   useEffect(() => {
     if (loggedIn) {
-      mainApi
-        .getSavedMovies()
+      mainApi.getSavedMovies()
         .then((savedMoviesData) => {
+          console.log('savedMoviesData', savedMoviesData)
           setSavedMovies(
             savedMoviesData.filter((m) => m.owner === currentUser._id),
           )
         })
-        .catch(() => setIsErrorInfoTooltipOpen(true))
+        .catch(() => setIsErrorInfoTooltipOpen(true));
     }
-  }, [loggedIn])
+  }, [loggedIn, currentUser])
 
   const checkToken = () => {
-    const jwt = localStorage.getItem('jwt')
+    const jwt = localStorage.getItem('jwt');
     if (jwt) {
       mainApi
         .getUserInfo(jwt)
@@ -103,7 +107,7 @@ function App() {
         localStorage.setItem('email', newUser.email)
         setProfileMessage('Данные профиля успешно изменены')
       })
-      .catch((err) =>
+      .catch(() =>
         setProfileMessage('Произошла ошибка при обновлении профиля'),
       )
   }
@@ -114,11 +118,16 @@ function App() {
       .then(() => {
         handleLogin({ email, password })
         /*setIsSuccessInfoTooltipOpen(true);*/
-        //history.push('/signin');
+        history.push('/signin');
       })
       .catch((err) => {
+        if (err === 'Ошибка: 409') {
+          setRegisterError('Данный email уже зарегистрирован');
+        } else if (err === 'Ошибка: 400') {
+          setRegisterError('Ошибка при регистрации пользователя');
+        }
         console.log(err)
-      })
+      });
   }
 
   const handleLogin = ({ email, password }) => {
@@ -127,12 +136,16 @@ function App() {
       .then((res) => {
         if (res) {
           localStorage.setItem('jwt', res.token)
-          setLoggedIn(true)
-          history.push('/movies')
+          setLoggedIn(true);
+          history.push('/movies');
         }
       })
       .catch((err) => {
-        console.log(err)
+        if (err === 'Ошибка: 401') {
+          setLoginError("Неправильный email или пароль");
+        } else  {
+        setLoginError("Поробуйте зарегистрироваться еще раз");
+        }
       })
   }
 
@@ -155,10 +168,9 @@ function App() {
       setPreloader(true)
       moviesApi
         .getMovies()
-        .then((moviesData) => {
-          setMoviesCollection(moviesData)
-          localStorage.setItem('moviesCollection', JSON.stringify(moviesData))
-          console.log(moviesData, 'moviesData')
+        .then((movies) => {
+          setMoviesCollection(movies)
+          localStorage.setItem('moviesCollection', JSON.stringify(movies))
         })
         .catch(() => {
           setSearchStatus(
@@ -180,7 +192,6 @@ function App() {
         request,
         checkboxStatus,
       )
-
       localStorage.setItem('moviesStorage', JSON.stringify(moviesStorage))
       localStorage.setItem('request', request)
       localStorage.setItem('checkboxStatus', checkboxStatus)
@@ -189,21 +200,14 @@ function App() {
     }
   }, [moviesCollection, request, checkboxStatus])
 
-  function renderMovies() {
-    setRenderedMovies((state) =>
-      filteredMovies.slice(0, state.length + moreResults),
-    )
-  }
-
   useEffect(() => {
     if (renderedMovies.length === filteredMovies.length) {
-      setMoreButtonVisibility(false)
+      setGetMoreMoviesButton(false)
     }
   }, [renderedMovies, filteredMovies])
 
   function saveMovie(movie) {
-    mainApi
-      .saveMovie(movie)
+    mainApi.saveMovie(movie)
       .then((newMovie) => {
         setSavedMovies((movies) => [newMovie, ...movies])
       })
@@ -235,13 +239,17 @@ function App() {
   useEffect(() => {
     if (filteredMovies.length > 0) {
       if (filteredMovies.length > firstMovieCount) {
-        setRenderedMovies(filteredMovies.slice(0, firstMovieCount))
-        setMoreButtonVisibility(true)
+        setRenderedMovies(filteredMovies.slice(0, firstMovieCount));
+        setGetMoreMoviesButton(true);
       } else {
-        setRenderedMovies(filteredMovies)
+        setRenderedMovies(filteredMovies);
       }
     }
-  }, [filteredMovies, firstMovieCount])
+  }, [filteredMovies, firstMovieCount]);
+
+  function renderMovies() {
+    setRenderedMovies((prevState) => filteredMovies.slice(0, prevState.length + moreResults));
+  }
 
   function handleUserSignOut() {
     localStorage.removeItem('jwt')
@@ -259,6 +267,7 @@ function App() {
     setLoggedIn(false)
     setCurrentUser({})
     history.push('/')
+    console.log(localStorage, 'localstorage')
   }
 
   const closeInfoToolTip = () => {
@@ -270,6 +279,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Header loggedIn={loggedIn} />
+        <div className="content">
         <Switch>
           <Route exact path="/">
             <Main loggedIn={loggedIn}/>
@@ -294,7 +304,7 @@ function App() {
               savedMovies={savedMovies}
               onSaveMovie={saveMovie}
               onDeleteMovie={handleDeleteMovie}
-              moreButtonVisibility={moreButtonVisibility}
+              getMoreMoviesButton={getMoreMoviesButton}
               renderMoreMovies={renderMovies}
             />
           </ProtectedRoute>
@@ -310,19 +320,20 @@ function App() {
             {loggedIn ? (
               <Redirect to="/" />
             ) : (
-              <Register onRegister={handleRegister} />
+              <Register onRegister={handleRegister}
+              registerError={registerError} />
             )}
           </Route>
 
           <Route path="/signin">
-            {loggedIn ? <Redirect to="/" /> : <Login onLogin={handleLogin} />}
+            {loggedIn ? <Redirect to="/" /> : <Login onLogin={handleLogin} loginError={loginError}/>}
           </Route>
 
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
-
+        </div>
         {loggedIn && <Footer />}
 
         <InfoToolTip

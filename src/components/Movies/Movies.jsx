@@ -13,8 +13,8 @@ const Movies = ({
     savedMovies,
     onSaveMovie,
     onDeleteMovie,
-    moreButtonVisibility,
-    onRenderMovies
+    getMoreMoviesButton,
+    renderMoreMovies
 }) => {
 
     return (
@@ -35,8 +35,8 @@ const Movies = ({
               onDeleteMovie={onDeleteMovie}
               preloader={preloader}
               isSearchDone={isSearchDone}
-              onRenderMovies={onRenderMovies}
-              moreButtonVisibility={moreButtonVisibility}
+              getMoreMoviesButton={getMoreMoviesButton}
+              renderMoreMovies={renderMoreMovies}
             />: (!preloader ?
                 <div className="movies__span">
                   <span className="movies__error-span-text">Ничего не найдено</span>

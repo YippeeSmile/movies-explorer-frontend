@@ -30,10 +30,10 @@ function Navigation({loggedIn}) {
             <>
                 <nav className='navigation__container'>
                     <div className='navigation__items'>
-                        <Link to='/movies' className='navigation__item' activeClassName="navigation__item_active">
+                        <Link to='/movies' className='navigation__item' activeclassname="navigation__item_active">
                             Фильмы
                         </Link>
-                        <Link to='/saved-movies' className='navigation__item' activeClassName="navigation__item_active">
+                        <Link to='/saved-movies' className='navigation__item' activeclassname="navigation__item_active">
                             Сохраненные фильмы
                         </Link>
                     </div>
@@ -51,8 +51,8 @@ function Navigation({loggedIn}) {
                         <img src={exit} alt="кнопка крестик" className='navigation__exit-button-icon'/></button>
                 <div className="navigation__burger-items">
                 <Link to='/' className="navigation__burger-item">Главная</Link>
-                <Link to='/movies' className="navigation__burger-item" activeClassName="navigation__item_active">Фильмы</Link> 
-                <Link to='/saved-movies' className="navigation__burger-item" activeClassName="navigation__item_active">Сохраненные фильмы</Link>
+                <Link to='/movies' className="navigation__burger-item" activeclassname="navigation__item_active">Фильмы</Link> 
+                <Link to='/saved-movies' className="navigation__burger-item" activeclassname="navigation__item_active">Сохраненные фильмы</Link>
               </div>
               <div className="navigation__burger-account-container"> 
                 <Link to='/profile' className="navigation__burger-account">Аккаунт</Link>

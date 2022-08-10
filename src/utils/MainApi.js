@@ -7,6 +7,7 @@ class MainApi {
 
     get _headers() {
         return {
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
         }
@@ -16,7 +17,7 @@ class MainApi {
         if (res.ok) {
             return res.json()
         } else {
-            Promise.reject(`Ошибка: ${res.status}`);
+            return Promise.reject(`Ошибка: ${res.status}`);
         }
     }
 
@@ -27,7 +28,7 @@ class MainApi {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name: name, password: password, email: email })
+                body: JSON.stringify({ name, email, password })
             })
             .then(this._getResponse)
     }
@@ -35,10 +36,7 @@ class MainApi {
     authorize = ({ email, password }) => {
             return fetch(`${this._baseUrl}/signin`, {
                     method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
+                    headers: this._headers,
                     body: JSON.stringify({ password: password, email: email })
                 })
                 .then(this._getResponse)

@@ -10,3 +10,7 @@
     background-color: #202020;
     margin: 0 auto;
 }
+
+.content {
+    min-height: calc(100vh - 172px);
+}

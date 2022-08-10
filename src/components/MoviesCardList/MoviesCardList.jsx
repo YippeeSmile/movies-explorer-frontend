@@ -10,11 +10,11 @@ const MoviesCardList = ({
   preloader,
   isSearchDone,
   renderMoreMovies,
-  moreButtonVisibility,
+  getMoreMoviesButton,
 }) => {
-  const moreButtonClassName = moreButtonVisibility
-    ? `movies-card-list__button_hidden`
-    : `movies-card-list__button`
+  const getMoreMoviesButtonClassName = getMoreMoviesButton
+    ? `movies-card-list__button`
+    : `movies-card-list__button_hidden`
 
   return (
     <section className="movies-card-list">
@@ -33,8 +33,8 @@ const MoviesCardList = ({
         isSearchDone ? (
           <div className="movies-list__btn-section">
             <button
-              onClick={renderMoreMovies} //onRenderMovies
-              className={moreButtonClassName}
+              onClick={renderMoreMovies}
+              className={getMoreMoviesButtonClassName}
               type="button"
             >
               Ещё

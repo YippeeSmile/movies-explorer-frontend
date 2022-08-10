@@ -66,7 +66,7 @@ const SearchForm = ({ onSearch }) => {
             className="search-form__input"
             onChange={handleChangeRequest}
             placeholder="Фильм"
-            minLength="2"
+            minLength="1"
             required
           ></input>
           <button

@@ -13,8 +13,8 @@ const InfoTooltip = ({ isSuccess, isError, isOpen, onClose}) => {
           <button className="info-tooltip__close-btn" />
           <img className="info-tooltip__image" src={isError ? authErrorImage : authSuccessImage} alt='info-icon'/>
           <p className="info-tooltip__text">
-            {isSuccess &&  'Вы успешно зарегистрировались!'}
-            {isError && 'Что-то пошло не так! Попробуйте ещё раз.'}
+            {isSuccess &&  'Фильм удален'}
+            {isError && 'Нельзя добавить фильм в избранное, содержит некорректные данные'}
           </p>
         </div>
       </section>

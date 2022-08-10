@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/logo_main.svg';
 import { useFormValidation } from '../../hooks/useForm';
 
-const Login = ({ onLogin, loginErrorMessage }) => {
+const Login = ({ onLogin, loginError}) => {
    const {  values, errors, isValid, handleChange, resetForm } = useFormValidation();
 
    useEffect(() => {
@@ -45,8 +45,8 @@ const Login = ({ onLogin, loginErrorMessage }) => {
                     autoComplete='off'
                     />
                     <span className='auth__input-error password-input-error'>{errors.password}</span>
-                    <span className="auth__input-error login-input-error">{loginErrorMessage}</span>
                 </fieldset>
+                <span className="auth__input-error">{loginError}</span>
             <button disabled={!isValid} className="auth__button auth__button_error" type="submit">Войти</button>
             </form>
             <div className="auth__signin">
