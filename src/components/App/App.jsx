@@ -60,8 +60,6 @@ function App() {
     if (localStorage.getItem('moviesStorage')) {
       const initialSearch = JSON.parse(localStorage.getItem('moviesStorage'))
       const searchResult = filterMovies(initialSearch, request, checkboxStatus)
-      console.log('initialSearch', initialSearch)
-      console.log('searchResult', searchResult)
       setFilteredMovies(searchResult)
       setIsSearch(true)
     }
@@ -71,7 +69,6 @@ function App() {
     if (loggedIn) {
       mainApi.getSavedMovies()
         .then((savedMoviesData) => {
-          console.log('savedMoviesData', savedMoviesData)
           setSavedMovies(
             savedMoviesData.filter((m) => m.owner === currentUser._id),
           )
