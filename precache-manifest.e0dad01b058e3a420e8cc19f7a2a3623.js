@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/movies-explorer-frontend/static/media/zoom-icon-btn.acb3d991.svg"
   },
   {
-    "revision": "d0b121f3a9d3d88afdfd6902d31ee9a0",
-    "url": "/movies-explorer-frontend/static/media/Inter-Black.d0b121f3.woff"
-  },
-  {
     "revision": "661569afe57a38e1529a775a465da20b",
     "url": "/movies-explorer-frontend/static/media/Inter-Black.661569af.woff2"
+  },
+  {
+    "revision": "d0b121f3a9d3d88afdfd6902d31ee9a0",
+    "url": "/movies-explorer-frontend/static/media/Inter-Black.d0b121f3.woff"
   },
   {
     "revision": "3ac83020fe53b617b79b5e2ad66764af",
@@ -76,12 +76,12 @@ self.__precacheManifest = [
     "url": "/movies-explorer-frontend/static/media/Inter-Regular.dc131113.woff2"
   },
   {
-    "revision": "99a0d9a7e4c99c17bfdd94a22a5cf94e",
-    "url": "/movies-explorer-frontend/static/media/Inter-Bold.99a0d9a7.woff"
-  },
-  {
     "revision": "444a7284663a3bc886683eb81450b294",
     "url": "/movies-explorer-frontend/static/media/Inter-Bold.444a7284.woff2"
+  },
+  {
+    "revision": "99a0d9a7e4c99c17bfdd94a22a5cf94e",
+    "url": "/movies-explorer-frontend/static/media/Inter-Bold.99a0d9a7.woff"
   },
   {
     "revision": "2301690ea6a8fac49d9897b40ce8baa0",
