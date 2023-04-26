@@ -1,3 +1,9 @@
 .movies {
     max-width: 100vw - 140px;
 }
+
+.movies__error-span-text {
+    color: #FFF;
+    margin: 0 auto;
+    margin: 20px 0px 0px 70px;
+}

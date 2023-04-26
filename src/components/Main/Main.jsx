@@ -4,19 +4,16 @@ import AboutProjects from '../AboutProjects/AboutProjects';
 import Techs from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
 import Portfolio from '../Portfolio/Portfolio';
-import Footer from '../Footer/Footer';
 
 const Main = () => {
 
-
-    return ( 
+    return (
        <div className="main">
        <Promo />
        <AboutProjects />
        <Techs />
        <AboutMe />
        <Portfolio />
-       <Footer />
        </div>
     )
 };

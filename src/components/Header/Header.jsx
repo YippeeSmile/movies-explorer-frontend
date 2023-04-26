@@ -4,7 +4,7 @@ import logo from '../../images/logo_main.svg';
 import { Route, Link, Switch } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 
-const Header = () => {
+const Header = ({loggedIn}) => {
 
 
     return (
@@ -14,7 +14,7 @@ const Header = () => {
                     <Link to='/' className='header__logo-link'>
                         <img src={logo} alt='Логотип' className='header__logo' />
                     </Link>
-                <Navigation />
+                <Navigation loggedIn={loggedIn}/>
                 </header>
             </Route>
             <Route exact path="/(profile|movies|saved-movies)">
@@ -22,7 +22,7 @@ const Header = () => {
                     <Link to='/' className='header__logo-link'>
                         <img src={logo} alt='Логотип' className='header__logo' />
                     </Link>
-                <Navigation />
+                <Navigation loggedIn={loggedIn}/>
                 </header>
             </Route>
        </Switch>

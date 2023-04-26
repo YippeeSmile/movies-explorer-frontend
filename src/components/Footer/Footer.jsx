@@ -11,7 +11,7 @@ const Footer = () => {
                 <li className='footer__copy-link_copy'>&copy;{new Date().getFullYear()}</li>
                 <ul className='footer__copy-link_items-right'>
                     <li className='footer__copy-link_copy'>Яндекс.Практикум</li>
-                    <li className='footer__copy-link_copy'><Link to="https://github.com/YippeeSmile" className='footer__copy-link_link'>Github</Link></li>
+                    <li className='footer__copy-link_copy'><a href="https://github.com/YippeeSmile" className='footer__copy-link_link'>Github</a></li>
                     <li className='footer__copy-link_copy'><Link to="" className='footer__copy-link_link'>Facebook</Link></li>
                 </ul>
             </ul>

@@ -70,6 +70,12 @@
     width: 100%;
 }
 
+.auth__input-error {
+    padding-top: 5px;
+    margin-bottom: 5px;
+    color: #EE3465;
+}
+
 .auth__input:focus {
     outline: none;
     border-bottom: 1px solid #4285F4;
@@ -121,6 +127,13 @@
     opacity: 0.3;
 }
 
+.auth__button:disabled {
+    background-color: #424242;
+    cursor: default;
+    opacity: 1;
+    transition: none;
+}
+
 .auth__signin {
     font-family: "Inter", "sans-serif", "Arial";
     font-style: normal;
@@ -141,6 +154,19 @@
 
 .auth__bottom-link:hover {
     opacity: 0.3;
+}
+
+.auth__input-error {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #EE3465;
+    padding-top: 5px;
+    opacity: 1;
+    margin-top: 20px;
+    padding: 7px;
 }
 
 @media screen and (max-width: 550px) {

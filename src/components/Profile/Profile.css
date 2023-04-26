@@ -7,6 +7,12 @@
     padding-bottom: 112px;*/
 }
 
+.profile__message-error {
+    margin-top: 20px;
+    color: #EE3465;
+    padding: 7px;
+}
+
 .profile__title {
     margin: 74px auto 123px;
     font-family: "Inter", "sans-serif", "Arial";
@@ -30,7 +36,10 @@
 }
 
 .profile__auth-submit {
+    border: none;
+    background-color: transparent;
     margin: 0;
+    color: #FFFFFF;
     transition: opacity ease-in-out .3s;
     cursor: pointer;
     padding-bottom: 16px;
@@ -38,6 +47,13 @@
 
 .profile__auth-submit:hover {
     opacity: 0.3;
+}
+
+.profile__auth-submit:disabled {
+    color: #8b8b8b;
+    cursor: default;
+    transition: none;
+    opacity: 1;
 }
 
 .profile__signout-link {
