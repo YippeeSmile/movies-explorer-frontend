@@ -60,6 +60,10 @@ self.__precacheManifest = [
     "url": "/movies-explorer-frontend/static/media/zoom-icon-btn.acb3d991.svg"
   },
   {
+    "revision": "dc131113894217b5031000575d9de002",
+    "url": "/movies-explorer-frontend/static/media/Inter-Regular.dc131113.woff2"
+  },
+  {
     "revision": "661569afe57a38e1529a775a465da20b",
     "url": "/movies-explorer-frontend/static/media/Inter-Black.661569af.woff2"
   },
@@ -70,10 +74,6 @@ self.__precacheManifest = [
   {
     "revision": "3ac83020fe53b617b79b5e2ad66764af",
     "url": "/movies-explorer-frontend/static/media/Inter-Regular.3ac83020.woff"
-  },
-  {
-    "revision": "dc131113894217b5031000575d9de002",
-    "url": "/movies-explorer-frontend/static/media/Inter-Regular.dc131113.woff2"
   },
   {
     "revision": "444a7284663a3bc886683eb81450b294",
